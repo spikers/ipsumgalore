@@ -1,0 +1,42 @@
+body {font-size: 0;}
+body > * {font-size: 1rem;}
+body {padding: 0; margin: 0;}
+
+#container {
+  width: 100%;
+}
+
+#page-content {
+  margin: auto;
+  padding: 0;
+  min-width: 300px;
+  width: 100%;
+  max-width: 900px;
+}
+
+#selection {
+  width: 100%;
+}
+
+#output {
+  width: 100%;
+}
+
+
+
+/*DEVELOPMENT ONLY*/
+#container {
+  border: 1px solid red;
+}
+
+#page-content {
+  border: 1px solid green;
+}
+
+#selection {
+  border: 1px solid purple;
+}
+
+#output {
+  border: 1px solid orange;
+}
