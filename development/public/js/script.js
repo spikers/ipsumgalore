@@ -8,20 +8,26 @@ function initialize() {
   //   appendIpsumToDom(lotr, 5, 100);
   // });
 
+  populateSelectIpsum();
+
   document.getElementById('generate-ipsum').addEventListener('click', function () {
     clearTextAreaOutput();
     addIpsumToTextArea(lol.pool, 5, 100);
   });  
 
-  document.getElementById('select-ipsum').addEventListener('click', function () {
-    selectIpsum();
+  document.getElementById('highlight-ipsum').addEventListener('click', function () {
+    highlightIpsum();
   });
 }
 
-function selectIpsum() {
+function highlightIpsum() {
   var output = document.getElementById('output');
   output.focus();
   output.select();
+}
+
+function populateSelectIpsum() {
+  //I'm Here Now
 }
 
 function clearTextAreaOutput() {
