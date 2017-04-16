@@ -8,15 +8,51 @@ function initialize() {
   //   appendIpsumToDom(lotr, 5, 100);
   // });
 
-  populateSelectIpsum();
+  handleSelectIpsum();
+  applyHandlersToSelectParagraphs();
 
   document.getElementById('generate-ipsum').addEventListener('click', function () {
-    clearTextAreaOutput();
-    addIpsumToTextArea(lol.pool, 5, 100);
+    //clearTextAreaOutput();
+    addIpsumToTextArea();
   });  
 
   document.getElementById('highlight-ipsum').addEventListener('click', function () {
     highlightIpsum();
+  });
+}
+
+function handleSelectIpsum() {
+  var selectIpsum = document.getElementById('select-ipsum');
+  populateSelectIpsum(selectIpsum);
+  applyHandlersToSelectPools(selectIpsum);
+}
+
+function populateSelectIpsum(selectIpsum) {
+  var pools = Object.keys(ipsum);
+
+  var selectIpsumFragment = document.createDocumentFragment();
+
+  for (var n = 0; n < pools.length; n++) {
+    var option = document.createElement('option');
+    var tn = document.createTextNode(pools[n]);
+    option.appendChild(tn);
+    selectIpsumFragment.appendChild(option);
+  }
+
+  selectIpsum.appendChild(selectIpsumFragment);
+  addIpsumToTextArea();
+}
+
+function applyHandlersToSelectPools(selectIpsum) {
+  selectIpsum.addEventListener('change', function () {
+    addIpsumToTextArea();
+  });
+}
+
+function applyHandlersToSelectParagraphs() {
+  var paragraphs = document.getElementById('select-paragraphs');
+  paragraphs.addEventListener('change', function () {
+    addIpsumToTextArea();
   });
 }
 
@@ -26,15 +62,18 @@ function highlightIpsum() {
   output.select();
 }
 
-function populateSelectIpsum() {
-  //I'm Here Now
-}
-
 function clearTextAreaOutput() {
   document.getElementById('output').value = '';
 }
 
-function addIpsumToTextArea(arrayPool, paragraphs, words) {
+function addIpsumToTextArea() {
+  var words = 100;
+  var arrayPool;
+  var paragraphs;
+
+  arrayPool = ipsum[document.getElementById('select-ipsum').value].pool;
+  paragraphs = document.getElementById('select-paragraphs').value;
+
   var ipsumText = getIpsumText(arrayPool, paragraphs, words);
   document.getElementById('output').value = ipsumText;
 }
