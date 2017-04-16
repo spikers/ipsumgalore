@@ -10,12 +10,18 @@ function initialize() {
 
   document.getElementById('generate-ipsum').addEventListener('click', function () {
     clearTextAreaOutput();
-    addIpsumToTextArea(lotr, 5, 100);
+    addIpsumToTextArea(lol, 5, 100);
   });  
 
   document.getElementById('select-ipsum').addEventListener('click', function () {
-    document.getElementById('output').select();
+    selectIpsum();
   });
+}
+
+function selectIpsum() {
+  var output = document.getElementById('output');
+  output.focus();
+  output.select();
 }
 
 function clearTextAreaOutput() {
@@ -53,6 +59,7 @@ function generateIpsum(arrayPool, words) {
 
     ipsum += poolWord;
 
+    j += countSpacesInWord(poolWord);
     //This is so the end of paragraphs don't have an innocuous space
     if (j < words - 1) ipsum += ' ';
     else ipsum += '.'
@@ -61,13 +68,21 @@ function generateIpsum(arrayPool, words) {
   return ipsum;
 }
 
+function countSpacesInWord(word) {
+  var count = 0;
+  for (var k = 0; k < word.length; k++) {
+    if (word[k] === ' ') count++;
+  }
+  return count;
+}
+
 function capitalizeFirstWord(content) {
   return content[0].toUpperCase() + content.substring(1);
 }
 
 function getFirstParagraphContent(arrayPool, words) {
   var start = '';
-  if (false) {
+  if (true) {
     start = 'Lorem ipsum dolor ';
   }
 
