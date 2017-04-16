@@ -10,7 +10,7 @@ function initialize() {
 
   document.getElementById('generate-ipsum').addEventListener('click', function () {
     clearTextAreaOutput();
-    addIpsumToTextArea(lol, 5, 100);
+    addIpsumToTextArea(lol.pool, 5, 100);
   });  
 
   document.getElementById('select-ipsum').addEventListener('click', function () {
@@ -82,7 +82,7 @@ function capitalizeFirstWord(content) {
 
 function getFirstParagraphContent(arrayPool, words) {
   var start = '';
-  if (true) {
+  if (false) {
     start = 'Lorem ipsum dolor ';
   }
 

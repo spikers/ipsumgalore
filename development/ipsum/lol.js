@@ -1,4 +1,6 @@
-var lol = [
+var lol = {
+  name: "League of Legends",
+  pool: [
   //Characters
   "Aatrox", "Ahri", "Akali", "Alistar", "Amumu", "Anivia", "Annie", "Ashe", "Aurelion Sol", "Azir", "Bard", "Blitzcrank", "Brand", "Braum", "Caitlyn", "Camille", "Cassiopeia", "Cho'Gath", "Corki", "Darius", "Diana", "Dr. Mundo", "Draven", "Ekko", "Elise", "Evelynn", "Ezreal", "Fiddlesticks", "Fiora", "Fizz", "Galio", "Gangplank", "Garen", "Gnar", "Gragas", "Graves", "Hecarim", "Heimerdinger", "Illaoi", "Irelia", "Ivern", "Janna", "Jarvan IV", "Jax", "Jayce", "Jhin", "Jinx", "Kalista", "Karma", "Karthus", "Kassadin", "Katarina", "Kayle", "Kennen", "Kha'Zix", "Kindred", "Kled", "Kog'Maw", "LeBlanc", "Lee Sin", "Leona", "Lissandra", "Lucian", "Lulu", "Lux", "Malphite", "Malzahar", "Maokai", "Master Yi", "Miss Fortune", "Mordekaiser", "Morgana", "Nami", "Nasus", "Nautilus", "Nidalee", "Nocturne", "Nunu", "Olaf", "Orianna", "Pantheon", "Poppy", "Quinn", "Rammus", "Rek'Sai", "Renekton", "Rengar", "Riven", "Rakan", "Rumble", "Ryze", "Sejuani", "Shaco", "Shen", "Shyvana", "Singed", "Sion", "Sivir", "Skarner", "Sona", "Soraka", "Swain", "Syndra", "Tahm Kench", "Taliyah", "Talon", "Taric", "Teemo", "Thresh", "Tristana", "Trundle", "Tryndamere", "Twisted Fate", "Twitch", "Udyr", "Urgot", "Varus", "Vayne", "Veigar", "Vel'Koz", "Vi", "Viktor", "Vladimir", "Volibear", "Warwick", "Wukong", "Xayah", "Xerath", "Xin Zhao", "Yasuo", "Yorick", "Zac", "Zed", "Ziggs", "Zilean", "Zyra",
 
@@ -6,20 +8,20 @@ var lol = [
   "Abyssal Scepter", "Aegis of the Legion", "Aether Wisp", "Amplifying Tome", "Ancient Coin", "Arcane Sweeper", "Archangel's Staff", "Ardent Censer", "Athene's Unholy Grail", "B. F. Sword", "Bami's Cinder", "Banner of Command", "Banshee's Veil", "Berserker's Greaves", "Bilgewater Cutlass", "Blade of the Ruined King", "Blasting Wand", "Boots of Mobility", "Boots of Speed", "Boots of Swiftness", "Brawler's Gloves", "Catalyst of Aeons", "Caulfield's Warhammer", "Chain Vest", "Chalice of Harmony", "Cloak of Agility", "Cloth Armor", "Control Ward", "Corrupting Potion", "Crystalline Bracer", "Cull", "Dagger", "Dead Man's Plate", "Death's Dance", "Death's Daughter", "Dervish Blade", "Diet Poro-Snax", "Doran's Blade", "Doran's Ring", "Doran's Shield", "Duskblade of Draktharr", "Edge of Night", "Elixir of Iron", "Elixir of Sorcery", "Elixir of Wrath", "Entropy Field", "Espresso Snax", "Essence Reaver", "Executioner's Calling", "Explorer's Ward", "Eye of the Equinox", "Eye of the Oasis", "Eye of the Watchers", "Face of the Mountain", "Faerie Charm", "Farsight Alteration", "Fiendish Codex", "Fire at Will", "Flash Zone", "Forbidden Idol", "Frost Queen's Claim", "Frosted Snax", "Frostfang", "Frozen Heart", "Frozen Mallet", "Giant Slayer", "Giant's Belt", "Glacial Shroud", "Greater Stealth Totem", "Greater Vision Totem", "Guardian Angel", "Guardian's Hammer", "Guardian's Horn", "Guardian's Orb", "Guinsoo's Rageblade", "Haunting Guise", "Health Potion", "Hexdrinker", "Hextech GLP-800", "Hextech Gunblade", "Hextech Protobelt-01", "Hextech Revolver", "Hunter's Machete", "Hunter's Potion", "Hunter's Talisman", "Iceborn Gauntlet", "Infinity Edge", "Ionian Boots of Lucidity", "Jaurim's Fist", "Kindlegem", "Kircheis Shard", "Knight's Vow", "Last Whisper", "Liandry's Torment", "Lich Bane", "Locket of the Iron Solari", "Long Sword", "Lord Dominik's Regards", "Lord Van Damm's Pillager", "Lost Chapter", "Luden's Echo", "Manamune", "Maw of Malmortius", "Mejai's Soulstealer", "Mercurial Scimitar", "Mercury's Treads", "Mikael's Crucible", "Moonflair Spellblade", "Morellonomicon", "Mortal Reminder", "Muramana", "Nashor's Tooth", "Needlessly Large Rod", "Negatron Cloak", "Ninja Tabi", "Nomad's Medallion", "Null-Magic Mantle", "Ohmwrecker", "Oracle Alteration", "Oracle's Extract", "Overlord's Bloodmail", "Perfect Hex Core", "Phage", "Phantom Dancer", "Pickaxe", "Poacher's Dirk", "Prototype Hex Core", "Quicksilver Sash", "Rabadon's Deathcap", "Rainbow Snax Party Pack!", "Raise Morale", "Randuin's Omen", "Rapid Firecannon", "Raptor Cloak", "Ravenous Hydra", "Recurve Bow", "Redemption", "Refillable Potion", "Rejuvenation Bead", "Relic Shield", "Righteous Glory", "Rod of Ages", "Ruby Crystal", "Ruby Sightstone", "Runaan's Hurricane", "Rylai's Crystal Scepter", "Sanguine Blade", "Sapphire Crystal", "Seeker's Armguard", "Seer Stone", "Seraph's Embrace", "Serrated Dirk", "Sheen",  "Sightstone", "Skirmisher's Sabre", "Sorcerer's Shoes", "Spectre's Cowl", "Spellthief's Edge", "Spirit Visage", "Stalker's Blade", "Statikk Shiv", "Sterak's Gage", "Stinger", "Sunfire Cape", "Sweeping Lens", "Talisman of Ascension", "Targon's Brace", "Tear of the Goddess", "The Black Cleaver", "The Black Spear", "The Bloodthirster", "The Dark Seal", "The Hex Core mk-1", "The Hex Core mk-2", "The Lightbringer", "Thornmail", "Tiamat", "Titanic Hydra", "Total Biscuit of Rejuvenation", "Total Biscuit of Rejuvenation", "Beam of Ruination", "Storm Bulwark", "Tracker's Knife", "Trinity Force", "Vampiric Scepter", "Vanguard Banner", "Void Staff", "Warden's Mail", "Warding Totem", "Warmog's Armor", "Wicked Hatchet", "Wit's End", "Youmuu's Ghostblade", "Zeal", "Zeke's Harbinger", "Zhonya's Hourglass", "Zz'Rot Portal",
 
   //Words
-  "gank", "outplay", "freelo", "pro", "kills", "snowball", "tick", 
+  "gank", "outplay", "freelo", "pro", "kills", "snowball", "tick", "advantage", "fail", "steal", "rank", "power farm", "caught", "picks", "waveclear", "dive", "last hit", "kill secure", "cc", "lockdown", "play", "shotcaller", "god", 
 
   //Kill Sprees
-  "killing spree", "rampage", "unstoppable", "legendary", 
+  "killing spree", "rampage", "unstoppable", "godlike", "legendary", 
 
   //Roles
-  "top", "mid", "bot", "support", "jungler", 
+  "top", "mid", "bot", "support", "jungler", "marksman", "assassin", "mage", "tank", "bruiser", 
 
   //In-Game Nouns
-  "ward", "trinket", "minions", "champions", "carry", "first blood", "pentakill", "items", "ultimate", "skills", "level", 
+  "ward", "trinket", "minions", "champions", "carry", "first blood", "pentakill", "items", "ultimate", "skills", "level", "power spike", "Elder Dragon", "drake", "Baron Nashor", "buff", "Ancient Golem", "Lizard Elder", "jungle camps", "camping", "raptors", "golems", "Gromp", "wolves", "fed", "Pixel Brush", "Tri Brush", 
 
   //Summoners
   "Barrier", "Clarity", "Cleanse", "Exhaust", "Flash", "Ghost", "Heal", "Ignite", "Mark", "Smite", "Teleport",
 
   //Ranks
   "bronze", "silver", "gold", "platinum", "masters", "challenger",
-];
+]};
