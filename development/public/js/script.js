@@ -16,13 +16,15 @@ function initialize() {
     addIpsumToTextArea();
   });  
 
-  document.getElementById('highlight-ipsum').addEventListener('click', function () {
-    highlightIpsum();
+  document.getElementById('copy-ipsum').addEventListener('click', function () {
+    copyIpsum();
   });
 }
 
 function handleSelectIpsum() {
   var selectIpsum = document.getElementById('select-ipsum');
+  var $selectIpsum = $('#select-ipsum');
+  $selectIpsum.select2();
   populateSelectIpsum(selectIpsum);
   applyHandlersToSelectPools(selectIpsum);
 }
@@ -56,10 +58,11 @@ function applyHandlersToSelectParagraphs() {
   });
 }
 
-function highlightIpsum() {
+function copyIpsum() {
   var output = document.getElementById('output');
   output.focus();
   output.select();
+  document.execCommand('copy');
 }
 
 function clearTextAreaOutput() {

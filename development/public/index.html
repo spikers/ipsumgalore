@@ -3,46 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <title>Ipsum Galore</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/select2.min.css">
+  
+  <script type="text/javascript" src="./js/jquery-3.2.1.slim.min.js"></script>
   <script type="text/javascript" src="../ipsum/ipsum.js"></script>
   <script type="text/javascript" src="./js/script.js"></script>
+  <script type="text/javascript" src="./js/select2.full.min.js"></script>
 </head>
 <body>
   <div id="container">
     <div id="page-content">
       <div id="selection">
-        <h1>Hey this is me, welcome to Ipsum Dolor!</h1>
-        <button id="generate-ipsum">Generate</button>
-        <select id="select-ipsum">
-        </select>
-        <select id="select-paragraphs">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-        </select>
-        <button id="highlight-ipsum">Select Ipsum</button>
+        <header>
+          <div id="header-text">
+            <h1 id="title">Ipsum Galore</h1>
+            <h4 id="subtitle">The Open-Source Lorem Ipsum Generator</h4>
+          </div>
+          <div id="header-social">
+            <a href="#"><img id="contribute" src="assets/img/contribute.svg" /></a>
+          </div>
+        </header>
+        <section>
+          <span>Make me Lorem Ipsum for <select id="select-ipsum">
+          </select> in 
+          <select id="select-paragraphs">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+          </select> paragraphs</span>
+          <button id="generate-ipsum">Generate</button>
+          <button id="copy-ipsum">Copy to Clipboard</button>
+        </div>
+        <!--
+        <div id="output">
+          <h2>This is where the output is!</h2>
+        </div>
+        -->
+        <div>
+          <textarea id="output">This is where the output is!</textarea>
+        </div>
       </div>
-      <!--
-      <div id="output">
-        <h2>This is where the output is!</h2>
-      </div>
-      -->
-      <div>
-        <textarea id="output">This is where the output is!</textarea>
-      </div>
-    </div>
+    </section>
   </div>
 </body>
 </html>
