@@ -16,7 +16,7 @@ body, body > * {
 #header-area, #body-content > * {
   margin: auto;
   padding: 0;
-  min-width: 300px;
+  min-width: 285px;
   width: 95%;
   max-width: 900px;
 }
@@ -53,7 +53,7 @@ header {
 }
 
 #contribute {
-  height: 40px;
+  height: 30px;
 }
 
 #title {
@@ -69,18 +69,13 @@ header {
 }
 
 #body-content select {
-  font-family: "Merriweather", serif;
-  font-style: italic;
-  /*font-size: 1.25rem;*/
-  font-size: 1.75rem;
-  
   border-color: white;
   border-width: 0 0 1px 0;
   border-style: solid;
   border-radius: 1px;
   
   color: white;
-  background-color: #00a8bb;
+  background-color: transparent;
   text-align-last: center;
   text-align: center;
   -webkit-appearance: none;
@@ -98,6 +93,7 @@ header {
 
 #container {
   width: 100%;
+  min-width: 300px;
 }
 
 #body-content {
@@ -107,8 +103,9 @@ header {
   
   color: white;
   text-align: center;
-  /*font-size: 1.25rem;*/
+}
 
+#body-content, #body-content select {
   font-size: 1.75rem;
   font-family: "Merriweather", serif;
   font-style: italic;
@@ -179,7 +176,7 @@ header {
   
 }
 
-#output-copy button {
+#output-buttons button {
   background-color: #DBDBDB;
   height: 30px;
   border-radius: 15px;
@@ -202,7 +199,6 @@ header {
 
   #subtitle {
     display: none;
-    background-color: red;
   }
 
   #output-organizer {
@@ -211,9 +207,11 @@ header {
             align-items: left;
   }
 
+  #select-ipsum {
+    width: 100px;
+  }
+
   #copy-ipsum {
-    /*Fix*/
-    display: none;
     background-color: white;
     border: none;
     color: black;
@@ -223,6 +221,14 @@ header {
   #copy-ipsum:active {
     color: orange;
     background-color: transparent;
+  }
+
+
+  #body-content, #body-content select {
+    font-size: 1.2rem;
+    font-family: "Merriweather", serif;
+    font-style: italic;
+    background-color: #00a8bb;
   }
 
 }
