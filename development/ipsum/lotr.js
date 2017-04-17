@@ -1,5 +1,5 @@
 var lotr = {
-  name: "Lord of the Rings",
+  name: "The Lord of the Rings",
   pool: [
 //Characters
   'Frodo', 'Sam', 'Gandalf', 'Aragorn', 'Bombadillo', 'Goldberry', 'Elrond', 'Legolas', 'Gimli', 'Thorin', 'Pippin', 'Merry', 'Rider', 'Gollum', 'Smeagol', 'Faramir', 'Boromir', 'Bilbo', 'Saruman', 'Treebeard', 'Denethor', 'Sauron', 'Éowyn', 'Galadriel', 'Baggins', 'Butterbur', 'Glorfindel', 'Arwen', 'Éomer', 'Théoden', 'Grìma', 'Shadowfax', 'Quickbeam', 'Shelob', 'Denethor', 'Beregond', 

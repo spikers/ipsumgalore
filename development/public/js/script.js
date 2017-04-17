@@ -3,6 +3,7 @@ window.addEventListener('load', function () {
 });
 
 function initialize() {
+  checkMobile();
   // document.getElementById('generate-ipsum').addEventListener('click', function () {
   //   clearOutput();
   //   appendIpsumToDom(lotr, 5, 100);
@@ -13,7 +14,7 @@ function initialize() {
 
   document.getElementById('generate-ipsum').addEventListener('click', function () {
     //clearTextAreaOutput();
-    addIpsumToTextArea();
+    handleIpsumChange();
   });  
 
   document.getElementById('copy-ipsum').addEventListener('click', function () {
@@ -21,10 +22,17 @@ function initialize() {
   });
 }
 
+function checkMobile() {
+  // If the screen width is small, use the mobile version
+  if (screen.width > 450) {
+    document.getElementById('contribute').setAttribute('src', './assets/img/contribute.png');
+  }
+}
+
 function handleSelectIpsum() {
   var selectIpsum = document.getElementById('select-ipsum');
-  var $selectIpsum = $('#select-ipsum');
-  $selectIpsum.select2();
+  // var $selectIpsum = $('#select-ipsum');
+  // $selectIpsum.select2();
   populateSelectIpsum(selectIpsum);
   applyHandlersToSelectPools(selectIpsum);
 }
@@ -42,25 +50,54 @@ function populateSelectIpsum(selectIpsum) {
   }
 
   selectIpsum.appendChild(selectIpsumFragment);
+  
+  handleIpsumChange();
+}
+
+function handleIpsumChange() {
+  changeParagraphText();
   addIpsumToTextArea();
+  changeOutputTitle();
+}
+
+function changeParagraphText() {
+  console.log(document.getElementById('select-paragraphs').value);
+  if (document.getElementById('select-paragraphs').value === '1') {
+    document.getElementById('paragraph-text').textContent = 'paragraph.';
+  } else {
+    document.getElementById('paragraph-text').textContent = 'paragraphs.';
+  }
+  
 }
 
 function applyHandlersToSelectPools(selectIpsum) {
   selectIpsum.addEventListener('change', function () {
-    addIpsumToTextArea();
+    handleIpsumChange();
   });
+}
+
+function changeOutputTitle() {
+  var span = document.createElement('span');
+  var tn = document.createTextNode(ipsum[document.getElementById('select-ipsum').value].name + ' Ipsum');
+  span.appendChild(tn);
+  
+  var outputTitle;
+  outputTitle = document.getElementById('output-title');
+
+  outputTitle.innerHTML = '';
+  outputTitle.appendChild(span);
 }
 
 function applyHandlersToSelectParagraphs() {
   var paragraphs = document.getElementById('select-paragraphs');
   paragraphs.addEventListener('change', function () {
-    addIpsumToTextArea();
+    handleIpsumChange();
   });
 }
 
 function copyIpsum() {
   var output = document.getElementById('output');
-  output.focus();
+  //output.focus();
   output.select();
   document.execCommand('copy');
 }

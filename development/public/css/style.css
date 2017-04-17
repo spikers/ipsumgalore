@@ -1,20 +1,43 @@
-body {font-size: 0; box-sizing: border-box; padding: 0; margin: 0;}
-body > * {font-size: 1rem; box-sizing: border-box;}
+body {font-size: 0; padding: 0; margin: 0; background-color: #005a64; }
+body > * {font-size: 1rem;}
 
-#page-content {
+body, body > * {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("https://fonts.googleapis.com/css?family=Open+Sans");
+}
+
+
+#header-area, #body-content > * {
   margin: auto;
   padding: 0;
   min-width: 300px;
-  width: 100%;
+  width: 95%;
+  max-width: 900px;
+}
 
-  max-width: 1000px;
+#created-by {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.65rem;
+  color: white;
+}
+
+footer {
+  text-align: center;
 }
 
 /*Header and Top of the Page*/
 header {
-  margin: 10px 0 0 0;
-  padding: 0;
-  width: 100%;
+  padding: 5px 0 0 0;
+  background-color: white;
+}
+
+#header-area {
   display: flex;
   -webkit-justify-content: space-between;
           justify-content: space-between;
@@ -22,12 +45,11 @@ header {
 
 #header-text {
   flex-direction: column;
-  padding: 0 0 0 10px;
 }
 
 #header-social {
   flex: 0 0 0;
-  padding: 10px 10px 0 0;
+  padding: 10px 0;
 }
 
 #contribute {
@@ -36,44 +58,173 @@ header {
 
 #title {
   margin: 0;
-  font-size: 27px;
+  font-size: 1.2rem;
   font-family: "Merriweather", serif;
 }
 
 #subtitle {
   margin: 5px 0 10px 0;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-family: "Open Sans", sans-serif;
+}
+
+#body-content select {
+  font-family: "Merriweather", serif;
+  font-style: italic;
+  /*font-size: 1.25rem;*/
+  font-size: 1.75rem;
+  
+  border-color: white;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-radius: 1px;
+  
+  color: white;
+  background-color: #00a8bb;
+  text-align-last: center;
+  text-align: center;
+  -webkit-appearance: none;
 }
 
 #select-ipsum {
   min-width: 250px;
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
+}
+
+#select-paragraphs {
+  width: 40px;
 }
 
 #container {
   width: 100%;
 }
 
+#body-content {
+  padding: 15px 0;
+  /*line-height: 3rem;*/
+  line-height: 5rem;
+  
+  color: white;
+  text-align: center;
+  /*font-size: 1.25rem;*/
+
+  font-size: 1.75rem;
+  font-family: "Merriweather", serif;
+  font-style: italic;
+  background-color: #00a8bb;
+}
+
 /*The rest of the page (Output)*/
 
 #output {
-  box-sizing: border-box;
   width: 100%;
-  margin: auto;
   height: 50vh;
+  border: none;
+  resize: none;
   overflow-y: scroll;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  
+}
+
+#output-content {
+  padding: 0 10px 10px 10px;
+  border-radius: 10px;
+  min-width: 285px;
+  width: 95%;
+  max-width: 600px;
+  margin: auto;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#output-content button {
+  margin: 0 auto;
+}
+
+#output-container, #footer-container {
+  margin: auto;
+  padding: 10px 0;
+  width: 100%;
+  background-color: #005a64;
+}
+
+#output-organizer {
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+#output-organizer > * {
+}
+
+#output-header {
+  padding: 15px 0;
+}
+
+#output-title {
+  
+}
+
+#output-title > * {
+  font-style: italic;
+}
+
+#output-copy {
+  
+}
+
+#output-copy button {
+  background-color: #DBDBDB;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  
+  font-size: 0.75rem;
+  font-family: "Open Sans", sans-serif;
+  padding: 0 10px;
+}
+
+#copy-ipsum:active {
+  background-color: orange;
 }
 
 @media (max-width: 450px) {
-  #subtitle {
-    display: none;
+  #title {
+    margin: 20px 0 0 0;
   }
 
-  header {
-    flex-direction: column;
+  #subtitle {
+    display: none;
+    background-color: red;
   }
+
+  #output-organizer {
+    flex-direction: column;
+    -webkit-align-items: left;
+            align-items: left;
+  }
+
+  #copy-ipsum {
+    /*Fix*/
+    display: none;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 0;
+  }
+
+  #copy-ipsum:active {
+    color: orange;
+    background-color: transparent;
+  }
+
 }
 
 /*DEVELOPMENT ONLY

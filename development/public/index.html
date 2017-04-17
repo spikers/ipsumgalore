@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Ipsum Galore</title>
+  <meta name="viewport" content="width=device-width" />
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -16,19 +17,26 @@
 <body>
   <div id="container">
     <div id="page-content">
-      <div id="selection">
-        <header>
+      <header>
+        <div id="header-area">
           <div id="header-text">
             <h1 id="title">Ipsum Galore</h1>
             <h4 id="subtitle">The Open-Source Lorem Ipsum Generator</h4>
           </div>
           <div id="header-social">
-            <a href="#"><img id="contribute" src="assets/img/contribute.svg" /></a>
+            <a href="#"><img id="contribute" src="assets/img/contribute-mobile.svg" /></a>
           </div>
-        </header>
-        <section>
-          <span>Make me Lorem Ipsum for <select id="select-ipsum">
-          </select> in 
+        </div>
+      </header>
+      <section id="body-content">
+        <div>
+          Make me Lorem Ipsum for
+        </div> 
+        <div>
+          <select id="select-ipsum"></select>
+        </div>
+        <div>
+          in 
           <select id="select-paragraphs">
             <option>1</option>
             <option>2</option>
@@ -45,20 +53,39 @@
             <option>13</option>
             <option>14</option>
             <option>15</option>
-          </select> paragraphs</span>
-          <button id="generate-ipsum">Generate</button>
-          <button id="copy-ipsum">Copy to Clipboard</button>
+          </select>
+          <span id="paragraph-text"> paragraph.</span>
         </div>
-        <!--
-        <div id="output">
-          <h2>This is where the output is!</h2>
-        </div>
-        -->
         <div>
+          <!--<button id="generate-ipsum">Generate</button>-->
+        </div>
+      </section>
+      
+      <section id="output-container">
+        <div id="output-content">
+          <div id="output-header">
+            <div id="output-organizer">
+              <div id="output-title">
+                The Lord of the Rings Ipsum
+              </div>
+              <div id="output-copy">
+
+                <button id="generate-ipsum">GENERATE</button>  
+                <button id="copy-ipsum">COPY TEXT</button>
+              </div>
+            </div>
+          </div>
           <textarea id="output">This is where the output is!</textarea>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section id="footer-container">
+        <footer>
+          <span id="created-by">built with ♥ by evoka studios</span>
+        </footer>
+      </section>
+
+    </div>
   </div>
 </body>
 </html>
