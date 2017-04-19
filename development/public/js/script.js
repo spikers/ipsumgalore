@@ -61,7 +61,6 @@ function handleIpsumChange() {
 }
 
 function changeParagraphText() {
-  console.log(document.getElementById('select-paragraphs').value);
   if (document.getElementById('select-paragraphs').value === '1') {
     document.getElementById('paragraph-text').textContent = 'paragraph.';
   } else {
