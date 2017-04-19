@@ -4,16 +4,11 @@ window.addEventListener('load', function () {
 
 function initialize() {
   checkMobile();
-  // document.getElementById('generate-ipsum').addEventListener('click', function () {
-  //   clearOutput();
-  //   appendIpsumToDom(lotr, 5, 100);
-  // });
-
   handleSelectIpsum();
   applyHandlersToSelectParagraphs();
 
   document.getElementById('generate-ipsum').addEventListener('click', function () {
-    //clearTextAreaOutput();
+    clearTextAreaOutput();
     handleIpsumChange();
   });  
 
@@ -23,16 +18,16 @@ function initialize() {
 }
 
 function checkMobile() {
-  // If the screen width is small, use the mobile version
-  if (screen.width > 450) {
+  // If the screen width is small, use the mobile version (The second check is to see if it exists)
+  if (screen.width > 450 && document.getElementById('contribute')) {
     document.getElementById('contribute').setAttribute('src', './assets/img/contribute.png');
   }
 }
 
 function handleSelectIpsum() {
   var selectIpsum = document.getElementById('select-ipsum');
-  // var $selectIpsum = $('#select-ipsum');
-  // $selectIpsum.select2();
+  
+  // Writes in all the ipsums we have
   populateSelectIpsum(selectIpsum);
   applyHandlersToSelectPools(selectIpsum);
 }

@@ -27,7 +27,7 @@ footer {
 
 /*Header and Top of the Page*/
 header {
-  padding: 5px 0 0 0;
+  padding: 5px 0 5px 0;
   background-color: white;
 }
 
@@ -38,7 +38,10 @@ header {
 }
 
 #header-text {
+  line-height: 25px;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 #header-social {
@@ -57,7 +60,7 @@ header {
 }
 
 #subtitle {
-  margin: 5px 0 10px 0;
+  margin: 0;
   font-size: 0.75rem;
   font-family: "Open Sans", sans-serif;
 }
@@ -67,7 +70,6 @@ header {
   border-width: 0 0 1px 0;
   border-style: solid;
   border-radius: 1px;
-  
   color: white;
   background-color: transparent;
   text-align-last: center;
@@ -182,13 +184,18 @@ header {
   padding: 0 10px;
 }
 
-#copy-ipsum:active {
-  background-color: orange;
+
+#output-buttons button:hover {
+  background-color: grey;
+}
+
+#output-buttons button:active {
+  background-color: black;
 }
 
 @media (max-width: 450px) {
   #title {
-    margin: 20px 0 0 0;
+
   }
 
   #subtitle {
@@ -201,22 +208,25 @@ header {
             align-items: left;
   }
 
+  #output-title {
+    margin-bottom: 10px;
+  }
+
+  #output-buttons {
+    /*margin: auto;*/
+  }
+
   #select-ipsum {
     width: 100px;
   }
 
   #copy-ipsum {
-    background-color: white;
-    border: none;
-    color: black;
-    padding: 0;
+
   }
 
   #copy-ipsum:active {
-    color: orange;
-    background-color: transparent;
-  }
 
+  }
 
   #body-content, #body-content select {
     font-size: 1.2rem;
@@ -224,22 +234,4 @@ header {
     font-style: italic;
     background-color: #00a8bb;
   }
-
 }
-
-/*DEVELOPMENT ONLY
-#container {
-  border: 1px solid red;
-}
-
-#page-content {
-  border: 1px solid green;
-}
-
-#header {
-  border: 1px solid purple;
-}
-
-#output {
-  border: 1px solid orange;
-}*/
